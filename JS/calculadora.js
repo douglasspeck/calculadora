@@ -23,7 +23,7 @@ function getValues() {
         name = "weight-" + number; // Seleciona os inputs na forma weight-n
         let weight = document.getElementById(name).value;
 
-        if (grade != "" && weight != "") { // Detecta se há inputs vazios
+        if (weight != "") { // Detecta se há notas sem peso
 
             if (grade >= 0 && grade <= 10) { // Detecta se o valor da nota está entre 0 e 10
 
@@ -37,26 +37,33 @@ function getValues() {
                     console.log("ERROR: The weight should be a number between 0 and 10.");
                     alert("ERRO: O peso deve ser um valor entre 0 e 10.");
                     has_error = true;
+                    break;
                 }
 
             } else {
                 console.log("ERROR: The grade should be a number between 0 and 10.");
                 alert("ERRO: A nota deve ser um valor entre 0 e 10.");
                 has_error = true;
+                break;
             }
 
+        } else if (grade != "") {
+            console.log("ERROR: You should provide a weight for every grade.");
+            alert("ERRO: Você deve inserir um peso para cada nota.");
+            has_error = true;
+            break;
         }
 
     }
 
-    if (num_grade >= 3) { // A função somente retorna as notas se houverem ao menos 3
+    if (num_grade > 0) { // A função somente retorna a média se houver ao menos uma linha preenchida
 
         console.log("Grades: " + grades);
         console.log("Weights: " + weights);
 
     } else if (has_error == false) {
-        console.log("ERROR: You should write at least three grades.");
-        alert("ERRO: Você deve inserir ao menos três notas.");
+        console.log("ERROR: You should write at least one grade.");
+        alert("ERRO: Você deve inserir ao menos uma nota.");
         has_error = true;
     }
 
