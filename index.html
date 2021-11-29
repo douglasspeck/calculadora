@@ -15,29 +15,37 @@
     </header>
     <section class="content">
         <form>
-            <label for="grade-1">Avaliação 1:</label>
-            <input type="number" id="grade-1" name="grade-1" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <label for="weight-1">Peso 1:</label>
-            <input type="number" id="weight-1" name="weight-1" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <label for="grade-2">Avaliação 2:</label>
-            <input type="number" id="grade-2" name="grade-2" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <label for="weight-2">Peso 2:</label>
-            <input type="number" id="weight-2" name="weight-2" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <label for="grade-3">Avaliação 3:</label>
-            <input type="number" id="grade-3" name="grade-3" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <label for="weight-3">Peso 3:</label>
-            <input type="number" id="weight-3" name="weight-3" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
-
-            <button
-                type="button"
-                id="calculate-button"
-                onclick="calculate();"
-            >Calcular</button>
+            <div class="grades">
+                <div class="grade">
+                    <label for="grade-1">Avaliação 1:</label>
+                    <input type="number" id="grade-1" name="grade-1" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+                <div class="grade">
+                    <label for="weight-1">Peso 1:</label>
+                    <input type="number" id="weight-1" name="weight-1" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+                <div class="grade">
+                    <label for="grade-2">Avaliação 2:</label>
+                    <input type="number" id="grade-2" name="grade-2" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+                <div class="grade">
+                    <label for="weight-2">Peso 2:</label>
+                    <input type="number" id="weight-2" name="weight-2" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+                <div class="grade">
+                    <label for="grade-3">Avaliação 3:</label>
+                    <input type="number" id="grade-3" name="grade-3" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+                <div class="grade">
+                    <label for="weight-3">Peso 3:</label>
+                    <input type="number" id="weight-3" name="weight-3" min=0 max=10 placeholder="Insira um valor entre 0 e 10" required>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="less-rows" onclick="moreGrades();">-</button>
+                <button type="button" id="calculate-button" onclick="calculate();">Calcular</button>
+                <button type="button" id="more-rows" onclick="lessGrades();">+</button>
+            </div>
         </form>
     </section>
 
