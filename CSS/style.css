@@ -1,0 +1,135 @@
+:root {
+    --c1: #16558f ;
+    --c2: #0583d2 ;
+    --c3: #61b0b7 ;
+    --c4: #b8e3ff ;
+}
+
+body {
+    margin: 0;
+    padding: 4%;
+    width: auto;
+    max-height: 99vh;
+    background-color: var(--c2);
+    font-family: "Montserrat", Sans-serif;
+}
+
+header {
+    display: block;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    padding: 1%;
+    margin: 0 auto 4%;
+    background-color: #fff;
+}
+
+h1 {
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.5em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.content {
+    display: block;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    padding: 1%;
+    margin: 4% auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+h2 {
+    margin: 0.5vh auto;
+}
+
+textarea {
+    min-width: 90%;
+    max-width: 90%;
+    max-height: 30vh;
+    white-space: nowrap;
+    word-wrap: none;
+    font-size: 12px;
+}
+
+button {
+    border: 1px solid var(--c2);
+    border-radius: 0;
+    grid-column: 1/5;
+    width: 100%;
+    height: 3em;
+    background-color: transparent;
+    color: var(--c1);
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 1% auto;
+    font-weight: 900;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--c2);
+    color: #fff;
+}
+
+footer {
+    background-color: #fff;
+    width: 30vw;
+    padding: 2vh;
+    margin: auto;
+    text-align: center;
+    border-radius: 4vh;
+}
+
+a {
+    font-weight: 700;
+    color: var(--c1);
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+a:hover, a:focus {
+    color: var(--c3);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 3fr 5fr 2fr 5fr;
+    row-gap: 1em;
+    align-items: center;
+}
+
+input[type="number"] {
+    height: 2em;
+}
+
+label {
+    font-weight: bold;
+    hyphens: auto;
+}
+
+@media only screen and (max-device-width: 900px) {
+    header {
+        width: 100%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .content {
+        width: 100%;
+    }
+    footer {
+        width: 80%;
+    }
+}
