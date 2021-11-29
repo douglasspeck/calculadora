@@ -5,6 +5,9 @@ original in:    github.com/douglasspeck/calculadora
 */
 
 // Coleta os valores dos campos input e retorna dois arrays: grades[] e weights[]
+
+var rows = 3;
+
 function getValues() {
 
     var grades = new Array();
@@ -12,7 +15,7 @@ function getValues() {
     var num_grade = 0;
     var has_error = false; // Essa variável indica que algum erro ocorreu, interrompendo a função
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < rows; i++) {
 
         let number = i + 1;
         let name = "grade-" + number; // Seleciona os inputs na forma grade-n
@@ -115,5 +118,51 @@ function calculate() {
         alert("Sucesso! Sua média é: " + average);
 
     }
+
+}
+
+function moreGrades() {
+
+    var rowNumber = rows + 1;
+    const inputTypes = [["grade", "weight"],["Avaliação","Peso"]];
+
+    let index = 0;
+
+    inputTypes.forEach(function(){
+
+        var newRow = document.createElement("div");
+        document.getElementById("grades-container").appendChild(newRow);
+        newRow.className = "grade";
+        
+        var label = document.createElement("label");
+        label.htmlFor = inputTypes[0][index] + "-" + rowNumber;
+        label.innerHTML = inputTypes[1][index] + " " + rowNumber + ":";
+        newRow.appendChild(label);
+    
+        var input = document.createElement("input");
+        input.setAttribute("type", "number");
+        input.id = inputTypes[0][index] + "-" + rowNumber;
+        input.setAttribute("name", inputTypes[0][index] + "-" + rowNumber);
+        input.setAttribute("min", "0");
+        input.setAttribute("max", "10");
+        input.setAttribute("placeholder", "Insira um valor entre 0 e 10.");
+        newRow.appendChild(input);
+
+        index++;
+
+    });
+
+    rows++;
+
+}
+
+function lessGrades() {
+
+    for (let i = 0; i < 2; i++) {
+        var container = document.getElementById("grades-container");
+        container.removeChild(container.lastElementChild);
+    }
+
+    rows--;
 
 }
