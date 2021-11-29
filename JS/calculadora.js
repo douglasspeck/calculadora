@@ -59,15 +59,19 @@ function calculate() {
     
     grades.forEach(function(){
 
-        a =+ grades[index] * weights[index];
-        b =+ weights[index];
+        a = a + parseInt(grades[index]) * parseInt(weights[index]);
+        b = b + parseInt(weights[index]);
 
         index++;
 
     });
 
-    var average = a/b;
+    console.log("a: " + a);
+    console.log("b: " + b);
 
-    console.log(average);
+    var average = a/b;
+    average.toFixed(2);
+
+    console.log("Success! The calculated average is: " + average + ".");
 
 }
